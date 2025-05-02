@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -10,6 +11,11 @@ const app = express();
 
 // Middleware to parse JSON requests
 app.use(express.json());
+app.use(cookieParser());
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 // Auth routes
 app.use("/api/auth", authRoutes);
