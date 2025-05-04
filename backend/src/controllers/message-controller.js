@@ -20,6 +20,7 @@ export const getUsersForSidebar = async (req, res) => {
 
 export const getMessages = async (req, res) => {
   try {
+    console.log("Requested ID:", req.params.id);
     const { id: userToChatId } = req.params;
     const myId = req.user._id;
 
