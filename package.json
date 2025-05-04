@@ -17,5 +17,8 @@
     "url": "https://github.com/pprachhiii/chat-app/issues"
   },
   "homepage": "https://github.com/pprachhiii/chat-app#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "path-to-regexp": "^8.2.0"
+  }
 }
