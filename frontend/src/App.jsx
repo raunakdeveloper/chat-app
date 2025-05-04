@@ -56,6 +56,7 @@ const App = () => {
           element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
         />
       </Routes>
+
       <Toaster />
     </div>
   );
