@@ -13,6 +13,12 @@ import { app, server } from "./lib/socket.js";
 
 dotenv.config();
 
+// Routes Debugging Middleware
+app.use((req, res, next) => {
+  console.log("Request path:", req.path); // Log the request path to see if something is wrong
+  next();
+});
+
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
 
@@ -36,7 +42,13 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();
 });
+
+
